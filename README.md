@@ -15,7 +15,7 @@ Two trained world models ship with the game and run inside the page. You can pla
 
 ## Approach
 
-- **A subject with a known answer.** The game is made here, so its real rules are at hand. Training data can be generated without limit, and every answer of the model can be checked.
+- **A subject with a known answer.** The game is made here, so its real rules are at hand, and every answer of the model can be checked.
 - **Make training data easy to produce.** The game has a training-data generator built in from the start. It runs many matches without a browser, mixes match-ups and random moves, and logs every move down to its intermediate frames (`npm run dataset`).
 - **Swap only the rules.** The rules are kept apart from drawing and players, so the same screen and the same players can run on the model instead.
 - **Compare with the rules on every move.** The screen shows the model's answer next to the rules' answer and marks where they differ.
@@ -59,6 +59,8 @@ The human player's icon is a diving helmet.
 
 ## Quick start
 
+Requires Node.js 22.12 or later.
+
 ```bash
 npm install
 ```
@@ -71,7 +73,7 @@ Open the URL it prints (usually http://localhost:5173).
 
 ## How to play
 
-The top bar sets the mode (Human vs AI / AI vs AI), the player types, the match number (Match No.) and the speed.
+The top bar sets the mode (Human vs AI / AI vs AI), the player types, the rules (Rules), the match number (Match No.) and the speed. `Built-in` under Rules is the real rules; `World model` lets a world model run the match (see "Playing with a world model" below).
 
 The **match number** is the random seed. It fixes the sequence of pairs and the random columns of garbage, so the same number with the same players gives the same match (with a human player, the same moves give the same game). **Random** picks a new number.
 
