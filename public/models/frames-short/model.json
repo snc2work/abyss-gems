@@ -1,0 +1,21 @@
+{
+ "run": "frames-short",
+ "max_resolve_steps": 60,
+ "max_chain_steps": 16,
+ "ledger_keys": [
+  "garbageSent",
+  "garbageOffset",
+  "garbagePressure",
+  "pending_self",
+  "pending_opp"
+ ],
+ "event_keys": [
+  "cleared",
+  "clearedGarbage",
+  "chains",
+  "garbageSent",
+  "garbageOffset",
+  "garbagePressure",
+  "garbageFallen"
+ ]
+}

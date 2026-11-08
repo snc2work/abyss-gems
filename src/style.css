@@ -1,0 +1,164 @@
+:root {
+  --ink: #03070d;
+  --panel: #08131e;
+  --line: rgba(130, 190, 210, 0.22);
+  --text: #c4dae2;
+  --dim: #6e8c99;
+  --accent: #2fe6d2;
+  --display: 'Zen Dots', sans-serif;
+  --body: 'Zen Kaku Gothic New', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 30%, #0a2230 0%, var(--ink) 70%);
+  color: var(--text);
+  font: 500 13px var(--body);
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 8px 12px;
+  padding: 9px 18px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(5, 12, 20, 0.92);
+}
+
+#controls label,
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: var(--dim);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+#controls label[hidden] {
+  display: none;
+}
+
+select,
+input[type='text'],
+input[type='number'] {
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--panel);
+  color: var(--text);
+  font: 500 13px var(--body);
+}
+
+input[type='number'] {
+  width: 92px;
+}
+
+input[type='text'] {
+  width: 190px;
+}
+
+.seed-row {
+  display: flex;
+  gap: 4px;
+}
+
+button {
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--panel);
+  color: var(--text);
+  font: 700 13px var(--body);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+button:hover {
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+select:focus-visible,
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+button:disabled {
+  opacity: 0.4;
+  border-color: var(--line);
+  color: var(--text);
+  cursor: default;
+}
+
+button.primary {
+  border-color: var(--accent);
+  background: rgba(47, 230, 210, 0.14);
+  color: #d6fff9;
+}
+
+button.primary:hover {
+  background: rgba(47, 230, 210, 0.28);
+}
+
+.speed-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+}
+
+input[type='range'] {
+  width: 96px;
+  accent-color: var(--accent);
+}
+
+output {
+  min-width: 42px;
+  color: var(--text);
+  font: 700 13px var(--body);
+}
+
+#download {
+  margin-left: auto;
+}
+
+#download {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#log-count {
+  color: var(--accent);
+}
+
+#stage {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#stage canvas {
+  display: block;
+}

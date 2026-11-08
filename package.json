@@ -1,0 +1,31 @@
+{
+  "name": "abyss-gems",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "selfplay": "tsx scripts/selfplay.ts",
+    "dataset": "tsx scripts/dataset.ts",
+    "model:mock": "tsx scripts/model-server.ts"
+  },
+  "dependencies": {
+    "@fontsource/zen-dots": "^5.3.0",
+    "@fontsource/zen-kaku-gothic-new": "^5.3.1",
+    "onnxruntime-web": "^1.31.1",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/three": "^0.187.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
+  }
+}

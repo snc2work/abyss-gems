@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABYSS GEMS</title>
+  </head>
+  <body>
+    <div id="controls">
+      <label>
+        Mode
+        <select id="mode">
+          <option value="human">Human vs AI</option>
+          <option value="ai">AI vs AI (watch)</option>
+        </select>
+      </label>
+      <label id="p1-field">
+        P1
+        <select id="p1">
+          <option value="chain">Chainer</option>
+          <option value="greedy">Greedy</option>
+          <option value="random">Random</option>
+        </select>
+      </label>
+      <label>
+        P2
+        <select id="p2">
+          <option value="chain">Chainer</option>
+          <option value="greedy">Greedy</option>
+          <option value="random">Random</option>
+        </select>
+      </label>
+      <label>
+        Rules
+        <select id="engine">
+          <option value="rules">Built-in</option>
+          <option value="model">World model</option>
+        </select>
+      </label>
+      <label id="model-field" hidden>
+        Model
+        <select id="model">
+          <option value="frames-v1">frames-v1 (well trained)</option>
+          <option value="frames-short">frames-short (short training)</option>
+          <option value="server">Server (URL)</option>
+        </select>
+      </label>
+      <label id="model-url-field" hidden>
+        Model URL
+        <input id="model-url" type="text" value="http://localhost:8765/step" spellcheck="false" />
+      </label>
+      <div class="field">
+        <label for="seed">Match No.</label>
+        <div class="seed-row">
+          <input id="seed" type="number" min="0" step="1" />
+          <button id="roll" type="button" title="Pick a random match number">Random</button>
+        </div>
+      </div>
+      <button id="start" class="primary" type="button">Start</button>
+      <button id="stop" type="button" disabled>Stop</button>
+      <div class="field">
+        <label for="speed">Speed</label>
+        <div class="speed-row">
+          <input id="speed" type="range" min="-2" max="4" step="1" value="0" />
+          <output id="speed-label" for="speed">1x</output>
+        </div>
+      </div>
+      <button id="download" type="button" title="Save the log of this match">
+        Save JSONL <span id="log-count">0</span>
+      </button>
+    </div>
+    <div id="stage"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
