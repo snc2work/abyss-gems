@@ -96,7 +96,9 @@ You can also choose the model in the address: http://localhost:5173/?model=frame
 
 - **The boards are the model's answer.** The model also returns its intermediate frames, so placing, falling and chain animations come from the model too. The rules only supply the turn order and the next pairs.
 - **The real rules run alongside.** Cells where the model's board differs from the rules' board get a red frame.
-- **The bubble above each board** says what differed on that move (cells, announced garbage, chains, winner, …) and how many moves have matched so far. The two small boards are the model's answer (left) and the rules' answer (right).
+- **The bubble above each player** switches between two views within a move.
+  - **While choosing (THOUGHT / PREVIEW):** the player's reasoning and the board after each candidate move (up to 3). Players look ahead with the real rules, so these boards come from the rules.
+  - **After the move (MODEL / RULES):** the next board the world model predicted, next to the rules' answer. The small board on the left is the model's prediction and the one on the right is the rules' answer. It also says what differed on that move (cells, announced garbage, chains, winner, …) and how many moves have matched so far.
 
 ## Comparing the two models
 
