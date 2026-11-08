@@ -89,6 +89,8 @@ The **match number** is the random seed. It fixes the sequence of pairs and the 
 
 ## Playing with a world model
 
+With `World model`, the world model takes over from the real rules in running the match. The big boards, the placing, falling, clearing and chain animations, the garbage counts and the winner are all the world model's predictions. The real rules only decide the turn order and the next pairs. The players still look ahead with the real rules to choose their moves.
+
 1. Set **Rules** to `World model`.
 2. Pick a **Model**: `frames-v1 (well trained)` or `frames-short (short training)`.
 3. Set **Mode** to `AI vs AI (watch)` to watch, or keep `Human vs AI` to play.
@@ -98,7 +100,7 @@ You can also choose the model in the address: http://localhost:5173/?model=frame
 
 ### Reading the screen
 
-- **The boards are the model's answer.** The model also returns its intermediate frames, so placing, falling and chain animations come from the model too. The rules only supply the turn order and the next pairs.
+- **The animations come from the model too.** The model also returns its intermediate frames, so the placing, falling and chain animations are its predictions as well.
 - **The real rules run alongside.** Cells where the model's board differs from the rules' board get a red frame.
 - **The bubble above each player** switches between two views within a move.
   - **While choosing (THOUGHT / PREVIEW):** the player's reasoning and the board after each candidate move (up to 3). Players look ahead with the real rules, so these boards come from the rules.
