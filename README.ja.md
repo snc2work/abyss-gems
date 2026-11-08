@@ -6,6 +6,8 @@
 
 学習済みの世界モデルを 2 つ同梱しており、ブラウザの中で動きます。ルールではなくモデルが結果を決める試合を、遊んだり観戦したりできます。
 
+**ブラウザですぐ遊べます：** https://snc2work.github.io/abyss-gems/
+
 ![frames-v1 での試合 777777（8 倍速）](docs/images/frames-v1-777777.gif)
 
 | よく学習したモデル（`frames-v1`） | 学習の短いモデル（`frames-short`） |
