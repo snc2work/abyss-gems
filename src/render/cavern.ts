@@ -57,9 +57,13 @@ const BACKDROP_FRAGMENT = /* glsl */ `
     color += vec3(0.01, 0.06, 0.075) * smoothstep(0.2, 1.0, caustic) * smoothstep(0.62, 1.0, vUv.y);
 
     // Colored glow rising from the crystals on the floor.
-    float leftGlow = exp(-pow((x + uAspect * 0.42) * 1.9, 2.0)) * exp(-vUv.y * 4.0);
-    float rightGlow = exp(-pow((x - uAspect * 0.42) * 1.9, 2.0)) * exp(-vUv.y * 4.0);
-    float midGlow = exp(-pow(x * 2.4, 2.0)) * exp(-vUv.y * 5.0);
+    // Squares by multiplication: pow() of a negative number is undefined (NaN on some GPUs).
+    float leftX = (x + uAspect * 0.42) * 1.9;
+    float rightX = (x - uAspect * 0.42) * 1.9;
+    float midX = x * 2.4;
+    float leftGlow = exp(-leftX * leftX) * exp(-vUv.y * 4.0);
+    float rightGlow = exp(-rightX * rightX) * exp(-vUv.y * 4.0);
+    float midGlow = exp(-midX * midX) * exp(-vUv.y * 5.0);
     color += (vec3(0.02, 0.15, 0.17) * leftGlow
             + vec3(0.09, 0.03, 0.2) * rightGlow
             + vec3(0.14, 0.05, 0.05) * midGlow) * (0.35 + uPulse * 0.9);
@@ -113,11 +117,15 @@ const CRYSTAL_FRAGMENT = /* glsl */ `
   varying float vHeight;
   varying float vPhase;
   void main() {
-    // Flat facets from screen-space derivatives.
-    vec3 normal = normalize(cross(dFdx(vViewPosition), dFdy(vViewPosition)));
+    // Flat facets from screen-space derivatives. Where they vanish, normalize() would
+    // give NaN, and bloom spreads a single NaN pixel over a large block of the screen.
+    vec3 faceNormal = cross(dFdx(vViewPosition), dFdy(vViewPosition));
+    float faceLength = length(faceNormal);
+    vec3 normal = faceLength > 1e-12 ? faceNormal / faceLength : vec3(0.0, 0.0, 1.0);
     vec3 toCamera = normalize(-vViewPosition);
     float facing = abs(dot(normal, toCamera));
-    float rim = pow(1.0 - facing, 2.2);
+    // Rounding can push facing just above 1, and pow() of a negative number is NaN.
+    float rim = pow(max(0.0, 1.0 - facing), 2.2);
     float facet = 0.5 + 0.5 * dot(normal, normalize(vec3(-0.4, 0.8, 0.45)));
     float glint = pow(max(0.0, dot(reflect(-toCamera, normal), normalize(vec3(-0.3, 0.9, 0.3)))), 26.0);
 
