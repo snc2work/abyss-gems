@@ -8,6 +8,8 @@ Two trained world models ship with the game and run inside the page. You can pla
 
 **Play it in your browser:** https://snc2work.github.io/abyss-gems/
 
+A world model match starts as soon as the page opens. The board movements, the garbage and the winner are the world model's predictions, while the AI players choose their moves with the real rules. The bubbles say Correct or Wrong for each prediction.
+
 ![frames-v1 on match 777777 (8x speed)](docs/images/frames-v1-777777.gif)
 
 | Well-trained model (`frames-v1`) | Short-trained model (`frames-short`) |

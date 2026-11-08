@@ -8,6 +8,8 @@
 
 **ブラウザですぐ遊べます：** https://snc2work.github.io/abyss-gems/
 
+開くと、世界モデルが進める試合がすぐに流れます。盤面の動き、おじゃま、勝ち負けは世界モデルの予測で、手を選ぶ AI は本物のルールで考えます。予測が当たったかどうかは、吹き出しの Correct / Wrong で分かります。
+
 ![frames-v1 での試合 777777（8 倍速）](docs/images/frames-v1-777777.gif)
 
 | よく学習したモデル（`frames-v1`） | 学習の短いモデル（`frames-short`） |
