@@ -73,7 +73,7 @@ npm install
 npm run dev
 ```
 
-Open the URL it prints (usually `http://localhost:5173`).
+Open the URL it prints (usually `http://localhost:5173`). With pnpm, run `pnpm install` and `pnpm dev`.
 
 ## How to play
 
