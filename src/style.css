@@ -150,6 +150,30 @@ output {
   color: var(--accent);
 }
 
+.button-link {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--panel);
+  color: var(--text);
+  font: 700 13px var(--body);
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.button-link:hover {
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.button-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
 #stage {
   display: flex;
   flex: 1;
