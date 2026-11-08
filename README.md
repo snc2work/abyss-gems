@@ -6,6 +6,8 @@ A small experiment with **world models**. Its subject is a turn-based, two-playe
 
 Two trained world models ship with the game and run inside the page. You can play or watch a match where the model, not the rules, decides what happens.
 
+![frames-v1 on match 777777 (8x speed)](docs/images/frames-v1-777777.gif)
+
 | Well-trained model (`frames-v1`) | Short-trained model (`frames-short`) |
 | --- | --- |
 | ![frames-v1 on match 777777](docs/images/frames-v1-777777.jpg) | ![frames-short on match 777777](docs/images/frames-short-777777.jpg) |

@@ -6,6 +6,8 @@
 
 学習済みの世界モデルを 2 つ同梱しており、ブラウザの中で動きます。ルールではなくモデルが結果を決める試合を、遊んだり観戦したりできます。
 
+![frames-v1 での試合 777777（8 倍速）](docs/images/frames-v1-777777.gif)
+
 | よく学習したモデル（`frames-v1`） | 学習の短いモデル（`frames-short`） |
 | --- | --- |
 | ![対戦番号 777777 の frames-v1](docs/images/frames-v1-777777.jpg) | ![対戦番号 777777 の frames-short](docs/images/frames-short-777777.jpg) |
