@@ -71,7 +71,7 @@ npm install
 npm run dev
 ```
 
-Open the URL it prints (usually http://localhost:5173).
+Open the URL it prints (usually `http://localhost:5173`).
 
 ## How to play
 
@@ -96,7 +96,7 @@ With `World model`, the world model takes over from the real rules in running th
 3. Set **Mode** to `AI vs AI (watch)` to watch, or keep `Human vs AI` to play.
 4. Press **Start**. The first move waits a moment while the model (about 6 MB) and ONNX Runtime load.
 
-You can also choose the model in the address: http://localhost:5173/?model=frames-short
+You can also choose the model in the address: `http://localhost:5173/?model=frames-short`
 
 ### Reading the screen
 
@@ -146,7 +146,7 @@ The models were made in a separate project with Python and PyTorch. That code is
 2. **Why one frame at a time.** Predicting the whole result of a move at once got almost no 2-chain moves right. One frame at a time, each prediction is a small change: a fall or a clear. The number of frames the model calls a clear is the chain length.
 3. **Parts trained separately.** The three parts (in the table above) were trained one by one.
 4. **Help only for garbage columns.** When the garbage count does not divide evenly over the 6 columns, the rest falls in random columns, which cannot be predicted. So the model's predicted number of blocks is stacked again, starting with the cells the model scores most likely to be garbage.
-5. **Running in the browser.** Each part was exported to ONNX and runs with [ONNX Runtime Web](https://onnxruntime.ai/) (WebAssembly). The test above checks that the browser version gives exactly the same replies as the Python version, frames included, for every move of [docs/samples/sample-game.jsonl](docs/samples/sample-game.jsonl).
+5. **Running in the browser.** Each part was exported to ONNX and runs with [ONNX Runtime Web](https://onnxruntime.ai/) (WebAssembly). The test above checks that the browser version gives exactly the same replies as the Python version, frames included, for every move of `docs/samples/sample-game.jsonl`.
 
 ## For developers
 

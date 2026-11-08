@@ -71,7 +71,7 @@ npm install
 npm run dev
 ```
 
-表示された URL（通常は http://localhost:5173 ）を開きます。
+表示された URL（通常は `http://localhost:5173`）を開きます。
 
 ## 遊び方
 
@@ -96,7 +96,7 @@ World model にすると、試合を進める役が、本物のルールから�
 3. 観戦するなら Mode を `AI vs AI (watch)` にします。`Human vs AI` のままなら自分で打てます。
 4. Start を押します。最初の 1 手は、モデル（約 6 MB）と ONNX Runtime の読み込みで少し待ちます。
 
-アドレスでも選べます：http://localhost:5173/?model=frames-short
+アドレスでも選べます：`http://localhost:5173/?model=frames-short`
 
 ### 画面の見方
 
@@ -146,7 +146,7 @@ Chainer は本物のルールで先を読み、連鎖を組んで打ちます。
 2. **1 コマずつ予測する理由：** 1 手の結果を一度に出す形では、2 連鎖以上の手がほとんど当たりませんでした。1 コマずつなら、1 回の予測は「落ちる」か「消える」の小さな変化で済みます。モデルが「消える」と答えたコマの数が、そのまま連鎖数になります。
 3. **部品ごとの学習：** 3 つの部品（上の表）は、別々に学習しました。
 4. **おじゃまの降る列だけは補助：** おじゃまの数が 6 列で割り切れないと、余りはランダムな列に降ります。これは予測できないので、モデルが予測した数だけ、モデルが一番おじゃまらしいと答えたマスから順に積み直しています。
-5. **ブラウザで動かす：** 各部品を ONNX 形式に書き出し、[ONNX Runtime Web](https://onnxruntime.ai/)（WebAssembly）で動かしています。上のテストで、[docs/samples/sample-game.jsonl](docs/samples/sample-game.jsonl) の全手について、ブラウザ版の答えが途中のコマまで Python 版と完全に同じことを確かめています。
+5. **ブラウザで動かす：** 各部品を ONNX 形式に書き出し、[ONNX Runtime Web](https://onnxruntime.ai/)（WebAssembly）で動かしています。上のテストで、`docs/samples/sample-game.jsonl` の全手について、ブラウザ版の答えが途中のコマまで Python 版と完全に同じことを確かめています。
 
 ## 開発者向けの情報
 
