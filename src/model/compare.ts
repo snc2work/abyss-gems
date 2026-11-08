@@ -81,7 +81,7 @@ export function compareStep(before: GameState, reply: ModelReply, rules: StepRes
   return { matches: differences.length === 0, differences, cells };
 }
 
-/** The mover's bubble after a model step: both answers side by side. */
+/** The mover's bubble after a model step: the model's prediction next to the rules' answer. */
 export function checkThought(
   before: GameState,
   model: StepResult,
@@ -105,7 +105,8 @@ export function checkThought(
   return {
     status: 'decided',
     text: check.matches ? `Same as the rules. ${score}` : `Differs: ${check.differences.join(', ')}. ${score}`,
-    heading: 'MODEL / RULES',
-    items: [item('Model', model), item('Rules', rules)],
+    heading: 'WORLD MODEL PREDICTION',
+    verdict: { text: check.matches ? 'Correct' : 'Wrong', good: check.matches },
+    items: [item('Predicted', model), item('Rules', rules)],
   };
 }

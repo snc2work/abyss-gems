@@ -14,6 +14,7 @@ export const INK = {
   panel: 'rgba(5, 13, 22, 0.86)',
   well: 'rgba(2, 7, 13, 0.97)',
   danger: '#ff5468',
+  success: '#5ee8a0',
 };
 
 export interface BlockPalette {

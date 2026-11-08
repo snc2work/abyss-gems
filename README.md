@@ -102,7 +102,7 @@ You can also choose the model in the address: http://localhost:5173/?model=frame
 - **The real rules run alongside.** Cells where the model's board differs from the rules' board get a red frame.
 - **The bubble above each player** switches between two views within a move.
   - **While choosing (THOUGHT / PREVIEW):** the player's reasoning and the board after each candidate move (up to 3). Players look ahead with the real rules, so these boards come from the rules.
-  - **After the move (MODEL / RULES):** the next board the world model predicted, next to the rules' answer. The small board on the left is the model's prediction and the one on the right is the rules' answer. It also says what differed on that move (cells, announced garbage, chains, winner, …) and how many moves have matched so far.
+  - **After the move (WORLD MODEL PREDICTION):** the next board the world model predicted, next to the rules' answer. A right prediction shows a green Correct, a wrong one a red Wrong. The small board on the left (Predicted) is the model's prediction and the one on the right (Rules) is the rules' answer. A wrong prediction also says what differed (cells, announced garbage, chains, winner, …). It also shows how many moves have matched so far.
 
 ## Comparing the two models
 

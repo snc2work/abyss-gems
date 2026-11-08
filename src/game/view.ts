@@ -21,6 +21,8 @@ export interface ThoughtView {
   text: string;
   /** Replaces the default heading above the items. */
   heading?: string;
+  /** A short result shown above the text, green when good and red otherwise. */
+  verdict?: { text: string; good: boolean };
   items: ThoughtItem[];
 }
 

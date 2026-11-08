@@ -118,10 +118,18 @@ export function drawThoughtBubble(
 
   const count = Math.min(thought.items.length, 3);
   const startX = x + BUBBLE.width - 10 - ITEM_WIDTH * count;
+  let bodyY = textY;
+  if (thought.verdict) {
+    ctx.font = `700 16px ${FONT_BODY}`;
+    ctx.fillStyle = thought.verdict.good ? INK.success : INK.danger;
+    ctx.fillText(thought.verdict.text, x + 16, textY);
+    ctx.font = `500 13px ${FONT_BODY}`;
+    bodyY += 22;
+  }
   ctx.fillStyle = INK.text;
   wrapText(ctx, thought.text, startX - x - 26)
-    .slice(0, 5)
-    .forEach((line, index) => ctx.fillText(line, x + 16, textY + index * 18));
+    .slice(0, thought.verdict ? 4 : 5)
+    .forEach((line, index) => ctx.fillText(line, x + 16, bodyY + index * 18));
 
   thought.items.slice(0, count).forEach((item, index) => {
     drawItem(ctx, item, startX + index * ITEM_WIDTH, BUBBLE.y + 34, accent);
