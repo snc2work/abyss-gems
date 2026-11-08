@@ -91,10 +91,12 @@ Start で対戦を始め、Stop でその対戦を終わらせます。Stop の�
 
 World model にすると、試合を進める役が、本物のルールから世界モデルに替わります。画面の大きな盤面、置く・落ちる・消える・連鎖の動き、おじゃまの数、勝ち負けは、すべて世界モデルの予測です。本物のルールが決めるのは、手番の順番と次に来るブロックだけです。プレイヤーは、本物のルールで先読みして手を選びます。
 
-1. Rules を `World model` にします。
-2. Model でモデルを選びます。`frames-v1 (well trained)` がよく学習したモデル、`frames-short (short training)` が学習の短いモデルです。
-3. 観戦するなら Mode を `AI vs AI (watch)` にします。`Human vs AI` のままなら自分で打てます。
-4. Start を押します。最初の 1 手は、モデル（約 6 MB）と ONNX Runtime の読み込みで少し待ちます。
+ページを開くと、Rules が `World model`、Model が `frames-v1`、Mode が `AI vs AI (watch)` の設定で、すぐに試合が流れ始めます。最初の 1 手は、モデル（約 6 MB）と ONNX Runtime の読み込みで少し待ちます。
+
+設定を変えて Start を押すと、新しい試合が始まります。
+
+- **Model：** `frames-v1 (well trained)` がよく学習したモデル、`frames-short (short training)` が学習の短いモデルです。
+- **Mode：** `Human vs AI` にすると、自分で打てます。
 
 アドレスでも選べます：`http://localhost:5173/?model=frames-short`
 

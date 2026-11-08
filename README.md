@@ -91,10 +91,12 @@ The **match number** is the random seed. It fixes the sequence of pairs and the 
 
 With `World model`, the world model takes over from the real rules in running the match. The big boards, the placing, falling, clearing and chain animations, the garbage counts and the winner are all the world model's predictions. The real rules only decide the turn order and the next pairs. The players still look ahead with the real rules to choose their moves.
 
-1. Set **Rules** to `World model`.
-2. Pick a **Model**: `frames-v1 (well trained)` or `frames-short (short training)`.
-3. Set **Mode** to `AI vs AI (watch)` to watch, or keep `Human vs AI` to play.
-4. Press **Start**. The first move waits a moment while the model (about 6 MB) and ONNX Runtime load.
+The page opens with Rules on `World model`, Model on `frames-v1` and Mode on `AI vs AI (watch)`, and a match starts right away. The first move waits a moment while the model (about 6 MB) and ONNX Runtime load.
+
+Change a setting and press **Start** for a new match.
+
+- **Model:** `frames-v1 (well trained)` is the well-trained model, `frames-short (short training)` the short-trained one.
+- **Mode:** `Human vs AI` lets you play yourself.
 
 You can also choose the model in the address: `http://localhost:5173/?model=frames-short`
 
