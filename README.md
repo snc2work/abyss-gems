@@ -2,7 +2,7 @@
 
 [日本語](README.ja.md)
 
-A small experiment with **world models**. Its subject is a turn-based, two-player falling-block puzzle made for it, whose matches are run by a world model instead of the rules. A world model here is a neural network that predicts the next state of the game from the current state and a move.
+An experiment with a game run by a **world model**. The game is a turn-based, two-player falling-block puzzle made for it, and its matches are run by the world model in place of the rules. A world model here is a neural network that predicts the next state of the game from the current state and a move.
 
 Two trained world models ship with the game and run inside the page. You can play or watch a match where the model, not the rules, decides what happens.
 
